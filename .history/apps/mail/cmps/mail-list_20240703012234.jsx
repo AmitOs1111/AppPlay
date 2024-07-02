@@ -14,7 +14,7 @@ export function MailList() {
           <div className="box-empty"></div>
           <div className="box-created-time">11:56pm</div>
         </li>
-        <li className="flex">
+        <li>
           <div className="box-sign">⃞</div>
           <div className="box-star">⭐️</div>
           <div className="box-important">▶︎</div>

@@ -8,7 +8,7 @@ export function MailIndex() {
     <section className="app-mail">
       <MailHeader />
 
-      <main className="mail-main flex">
+      <main className="mail-main">
         <MailAside />
 
         <div className="container-content">
