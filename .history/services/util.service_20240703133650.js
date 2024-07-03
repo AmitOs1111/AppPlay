@@ -108,19 +108,12 @@ function getMonthName(date) {
 
 function getFormateTime(date) {
   const now = new Date()
-  const createdAt = new Date(date)
   if (now - date <= 1000 * 60) return 'now'
   if (now - date <= 1000 * 60 * 60) return '1 hour'
-  if (now - date <= 1000 * 60 * 60 * 24) {
-    const hours = padNum(createdAt.getHours())
-    const minutes = padNum(createdAt.getMinutes())
-    const ampm = createdAt.getHours() > 12 ? 'PM' : 'AM'
-
-    return `${hours}:${minutes}${ampm}`
-  }
+  if (now - date <= 1000 * 60 * 60 * 24) return '1 day'
   if (now - date > 1000 * 60 * 60 * 24) {
-    const day = createdAt.getDate()
-    const month = getMonthName(createdAt)
-    return month + day
+    const day = date.getDate()
+    const month = getMonthName(date)
+    return day + month
   }
 }

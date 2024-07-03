@@ -119,8 +119,8 @@ function getFormateTime(date) {
     return `${hours}:${minutes}${ampm}`
   }
   if (now - date > 1000 * 60 * 60 * 24) {
-    const day = createdAt.getDate()
-    const month = getMonthName(createdAt)
+    const day = date.getDate()
+    const month = getMonthName(date)
     return month + day
   }
 }

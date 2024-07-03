@@ -2,10 +2,10 @@ import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/storage.service.js'
 
 export const mailService = {
+//   getById,
   query,
-  // getById,
-  remove,
-  save,
+  //   remove,
+  //   save,
 }
 
 const KEY = 'mailListDB'
@@ -15,6 +15,7 @@ const loggedinUser = {
 }
 
 function query(filterBy) {
+  console.log('hello from mail service query')
   let mails = _loadFromStorage()
   if (!mails) {
     mails = _createMails()
@@ -41,7 +42,7 @@ function query(filterBy) {
 //   const cars = _loadFromStorage()
 //   const car = cars.find((car) => carId === car.id)
 //   return Promise.resolve(car)
-// }
+}
 
 // function getNextCarId(carId) {
 //   let cars = _loadFromStorage()
@@ -50,35 +51,33 @@ function query(filterBy) {
 //   return cars[nextCarIdx].id
 // }
 
-function remove(mailId) {
-  // return Promise.reject('Not now!!!')
-  let mails = _loadFromStorage()
-  mails = mails.filter((mail) => mail.id !== mailId)
-  _saveToStorage(mails)
-  return Promise.resolve()
-}
+// function remove(carId) {
+//   // return Promise.reject('Not now!!!')
+//   let cars = _loadFromStorage()
+//   cars = cars.filter((car) => car.id !== carId)
+//   _saveToStorage(cars)
+//   return Promise.resolve()
+// }
 
-function save(mail) {
-  if (mail.id) return _update(mail)
-  //   else return _add(mail)
-}
+// function save(car) {
+//   if (car.id) return _update(car)
+//   else return _add(car)
+// }
 
 // function _add({ vendor, speed }) {
-//   let mails = _loadFromStorage()
+//   let cars = _loadFromStorage()
 //   const car = _createMail(vendor, speed)
-//   mails = [car, ...mails]
-//   _saveToStorage(mails)
+//   cars = [car, ...cars]
+//   _saveToStorage(cars)
 //   return Promise.resolve(car)
 // }
 
-function _update(mailToUpdate) {
-  let mails = _loadFromStorage()
-  mails = mails.map((mail) =>
-    mail.id === mailToUpdate.id ? mailToUpdate : mail
-  )
-  _saveToStorage(mails)
-  return Promise.resolve(mailToUpdate)
-}
+// function _update(carToUpdate) {
+//   let cars = _loadFromStorage()
+//   cars = cars.map((car) => (car.id === carToUpdate.id ? carToUpdate : car))
+//   _saveToStorage(cars)
+//   return Promise.resolve(carToUpdate)
+// }
 
 function _createMail() {
   return {
@@ -86,16 +85,15 @@ function _createMail() {
     subject: utilService.makeLorem(12),
     body: utilService.makeLorem(30),
     isRead: false,
-    isImportant: false,
     sentAt: Date.now(),
-    to: `${utilService.makeLorem(10)}@${utilService.makeLorem(10)}.com`,
+    // to:`${utilService.makeLorem(10)}@${utilService.makeLorem(10)}.com` 'momo@momo.com',
   }
 }
 
 function _createMails() {
   const mails = []
   for (let i = 0; i < 10; i++) {
-    mails.push(_createMail())
+    mails.push(_createMail(vendor))
   }
   return mails
 }

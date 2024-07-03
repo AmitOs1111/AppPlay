@@ -4,7 +4,7 @@ import { storageService } from '../../../services/storage.service.js'
 export const mailService = {
   query,
   // getById,
-  remove,
+  //   remove,
   save,
 }
 
@@ -15,6 +15,7 @@ const loggedinUser = {
 }
 
 function query(filterBy) {
+  console.log('hello from mail service query')
   let mails = _loadFromStorage()
   if (!mails) {
     mails = _createMails()
@@ -50,15 +51,16 @@ function query(filterBy) {
 //   return cars[nextCarIdx].id
 // }
 
-function remove(mailId) {
-  // return Promise.reject('Not now!!!')
-  let mails = _loadFromStorage()
-  mails = mails.filter((mail) => mail.id !== mailId)
-  _saveToStorage(mails)
-  return Promise.resolve()
-}
+// function remove(carId) {
+//   // return Promise.reject('Not now!!!')
+//   let cars = _loadFromStorage()
+//   cars = cars.filter((car) => car.id !== carId)
+//   _saveToStorage(cars)
+//   return Promise.resolve()
+// }
 
 function save(mail) {
+  console.log('from save service: ', mail)
   if (mail.id) return _update(mail)
   //   else return _add(mail)
 }

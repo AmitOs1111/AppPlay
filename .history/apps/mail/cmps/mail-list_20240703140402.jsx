@@ -1,15 +1,15 @@
 import { PreviewMail } from '../cmps/preview-mail.jsx'
 
-export function MailList({ mails, onChangeStatus, onRemoveMail }) {
+export function MailList({ mails, onChangeStatus }) {
   if (!mails) return <div>Loading...</div>
   return (
     <section className="mail-list">
       {mails.map((mail) => (
-        <article key={mail.id} className="flex">
+        <article key={mail.id}>
           <PreviewMail mail={mail} onChangeStatus={onChangeStatus} />
 
-          <div className="box-tools hide">
-            <button onClick={() => onRemoveMail(mail.id)}>x</button>
+          <div className="box-tools">
+            <button>x</button>
             <button>t</button>
           </div>
         </article>

@@ -26,7 +26,6 @@ export function MailIndex() {
 
   function onRemoveMail(mailId) {
     console.log('delete', mailId)
-    mailService.remove(mailId).then(() => loadMails())
   }
 
   return (

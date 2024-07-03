@@ -1,12 +1,11 @@
 const { useState, useEffect } = React
 
-import { mailService } from '../services/mail.service.js'
-import { utilService } from '../../../services/util.service.js'
-
 import { MailHeader } from '../cmps/mail-header.jsx'
 import { MailAside } from '../cmps/mail-aside.jsx'
 import { MailContentTopHeader } from '../cmps/mail-content-top-header.jsx'
 import { MailList } from '../cmps/mail-list.jsx'
+
+import { mailService } from './services/mail.service.js'
 
 export function MailIndex() {
   const [mails, setMails] = useState(null)
@@ -17,16 +16,11 @@ export function MailIndex() {
   }, [])
 
   function loadMails() {
-    mailService.query().then((mails) => setMails(mails))
-  }
-
-  function onSetChangeStatus(mail) {
-    mailService.save(mail).then(() => loadMails())
-  }
-
-  function onRemoveMail(mailId) {
-    console.log('delete', mailId)
-    mailService.remove(mailId).then(() => loadMails())
+    console.log('hello from load mails')
+    mailService.query().then((mails) => {
+      console.log('mails:', mails)
+      setMails(mails)
+    })
   }
 
   return (
@@ -38,11 +32,7 @@ export function MailIndex() {
 
         <div className="container-content">
           <MailContentTopHeader />
-          <MailList
-            mails={mails}
-            onChangeStatus={onSetChangeStatus}
-            onRemoveMail={onRemoveMail}
-          />
+          <MailList />
         </div>
       </main>
     </section>

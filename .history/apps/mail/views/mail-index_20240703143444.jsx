@@ -21,12 +21,7 @@ export function MailIndex() {
   }
 
   function onSetChangeStatus(mail) {
-    mailService.save(mail).then(() => loadMails())
-  }
-
-  function onRemoveMail(mailId) {
-    console.log('delete', mailId)
-    mailService.remove(mailId).then(() => loadMails())
+    console.log('mail:', mail)
   }
 
   return (
@@ -38,11 +33,7 @@ export function MailIndex() {
 
         <div className="container-content">
           <MailContentTopHeader />
-          <MailList
-            mails={mails}
-            onChangeStatus={onSetChangeStatus}
-            onRemoveMail={onRemoveMail}
-          />
+          <MailList mails={mails} onChangeStatus={onSetChangeStatus} />
         </div>
       </main>
     </section>

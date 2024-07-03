@@ -1,6 +1,6 @@
 import { PreviewMail } from '../cmps/preview-mail.jsx'
 
-export function MailList({ mails, onChangeStatus, onRemoveMail }) {
+export function MailList({ mails,onChangeStatus,onDeleteMail}) {
   if (!mails) return <div>Loading...</div>
   return (
     <section className="mail-list">
@@ -9,7 +9,7 @@ export function MailList({ mails, onChangeStatus, onRemoveMail }) {
           <PreviewMail mail={mail} onChangeStatus={onChangeStatus} />
 
           <div className="box-tools hide">
-            <button onClick={() => onRemoveMail(mail.id)}>x</button>
+            <button onClick={()=>onDeleteMail({mail.id})}>x</button>
             <button>t</button>
           </div>
         </article>
