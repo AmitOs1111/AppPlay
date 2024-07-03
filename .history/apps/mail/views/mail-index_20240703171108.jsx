@@ -25,11 +25,12 @@ export function MailIndex() {
   }
 
   function onRemoveMail(mailId) {
+    console.log('delete', mailId)
     mailService.remove(mailId).then(() => loadMails())
   }
 
   function onSetSelectMail(updateMails) {
-    mailService.saveMails(updateMails).then(() => loadMails())
+    console.log('updateMails:', updateMails)
   }
 
   return (

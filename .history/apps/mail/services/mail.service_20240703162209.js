@@ -6,7 +6,6 @@ export const mailService = {
   // getById,
   remove,
   save,
-  saveMails,
 }
 
 const KEY = 'mailListDB'
@@ -57,20 +56,6 @@ function remove(mailId) {
   mails = mails.filter((mail) => mail.id !== mailId)
   _saveToStorage(mails)
   return Promise.resolve()
-}
-
-function save(mail) {
-  if (mail.id) return _update(mail)
-  //   else return _add(mail)
-}
-
-function saveMails(updateMails) {
-  let mails = _loadFromStorage()
-  mails = mails.map((mail, idx) =>
-    mail.id === updateMails[idx].id ? updateMails[idx] : mail
-  )
-  _saveToStorage(mails)
-  return Promise.resolve(mails)
 }
 
 function save(mail) {

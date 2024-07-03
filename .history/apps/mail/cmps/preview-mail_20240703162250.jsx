@@ -3,16 +3,15 @@ import { utilService } from '../../../services/util.service.js'
 
 export function PreviewMail({ mail, onChangeStatus }) {
   function clickedChange(val) {
-    console.log('val', val)
     mail[val] = !mail[val]
     onChangeStatus(mail)
   }
 
-  const { subject, body, sentAt, isRead, isImportant, isSelected } = mail
+  const { subject, body, sentAt, isRead, isImportant } = mail
   return (
     <section className="preview-mail flex">
       <div onClick={() => clickedChange('isSelected')} className="box-sign">
-        {isSelected ? '☑︎' : '☐'}
+        {isRead ? '☑︎' : '☐'}
       </div>
       <div onClick={() => clickedChange('isImportant')} className="box-star">
         {isImportant ? '✩' : '★'}

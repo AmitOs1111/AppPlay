@@ -7,10 +7,10 @@ section.mail-list {
   border-collapse: collapse;
 }
 
-.mail-list article.bg-selected-mail {
+article.bg-selected-mail {
   background-color: var(--clr-article-selected);
 }
 
-.mail-list article.bg-read-mail {
+article.bg-read-mail {
   background-color: var(--main-bg-rgb);
 }

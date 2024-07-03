@@ -11,6 +11,6 @@ section.mail-list {
   background-color: var(--clr-article-selected);
 }
 
-.mail-list article.bg-read-mail {
+.mail-list article.bg-read-mail :nth-child() {
   background-color: var(--main-bg-rgb);
 }

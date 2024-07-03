@@ -6,7 +6,6 @@ export const mailService = {
   // getById,
   remove,
   save,
-  saveMails,
 }
 
 const KEY = 'mailListDB'

@@ -2,8 +2,11 @@ import { PreviewMail } from '../cmps/preview-mail.jsx'
 
 export function MailList({ mails, onChangeStatus, onRemoveMail }) {
   function getClassNameMail(mail) {
+    let className = ''
     if (mail.isSelected) return 'bg-selected-mail'
     if (mail.isRead) return 'bg-read-mail'
+    console.log('className=', className)
+    return className
   }
 
   if (!mails) return <div>Loading...</div>

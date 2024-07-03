@@ -1,0 +1,8 @@
+section.mail-list {
+  background-color: var(--main-bg-list);
+}
+
+.mail-list li {
+  border: 1px solid var(--clr-border-li);
+  border-collapse: collapse;
+}

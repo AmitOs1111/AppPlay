@@ -1,5 +1,6 @@
 export function MailContentTopHeader({ mails, onSetSelectMail }) {
   function onSelectMail({ target }) {
+    console.log('val', target.value)
     mails.forEach((mail) => {
       if (target.value === 'all') mail.isSelected = true
       if (target.value === 'none') mail.isSelected = false

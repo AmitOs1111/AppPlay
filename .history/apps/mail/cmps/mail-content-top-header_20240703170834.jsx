@@ -1,5 +1,6 @@
-export function MailContentTopHeader({ mails, onSetSelectMail }) {
+export function MailContentTopHeader({ mails }) {
   function onSelectMail({ target }) {
+    console.log('val', target.value)
     mails.forEach((mail) => {
       if (target.value === 'all') mail.isSelected = true
       if (target.value === 'none') mail.isSelected = false
@@ -7,7 +8,6 @@ export function MailContentTopHeader({ mails, onSetSelectMail }) {
       if (target.value === 'unread')
         mail.isSelected = mail.isRead ? false : true
     })
-    onSetSelectMail(mails)
   }
 
   return (

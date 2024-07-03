@@ -8,11 +8,11 @@ export function PreviewMail({ mail, onChangeStatus }) {
     onChangeStatus(mail)
   }
 
-  const { subject, body, sentAt, isRead, isImportant, isSelected } = mail
+  const { subject, body, sentAt, isRead, isImportant } = mail
   return (
     <section className="preview-mail flex">
       <div onClick={() => clickedChange('isSelected')} className="box-sign">
-        {isSelected ? '☑︎' : '☐'}
+        {isRead ? '☑︎' : '☐'}
       </div>
       <div onClick={() => clickedChange('isImportant')} className="box-star">
         {isImportant ? '✩' : '★'}

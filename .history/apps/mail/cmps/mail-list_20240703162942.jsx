@@ -10,7 +10,7 @@ export function MailList({ mails, onChangeStatus, onRemoveMail }) {
   return (
     <section className="mail-list">
       {mails.map((mail) => (
-        <article key={mail.id} className={`${getClassNameMail(mail)} flex`}>
+        <article key={mail.id} className={`${getClassNameMail(mail)}flex`}>
           <PreviewMail mail={mail} onChangeStatus={onChangeStatus} />
 
           <div className="box-tools hide">

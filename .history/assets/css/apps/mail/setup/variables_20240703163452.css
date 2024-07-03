@@ -3,5 +3,6 @@
   --main-bg-rgb: #f6f8fc;
   --clr-src: #eaf1fb;
   --clr-article-border: #eeeff2;
-  --clr-article-selected: #c2dbff;
+  --clr-article-read: #eeeff2;
+  --clr-article-selected: #eeeff2;
 }
