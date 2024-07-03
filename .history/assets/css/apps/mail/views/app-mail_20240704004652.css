@@ -1,0 +1,4 @@
+.app-mail {
+  background-color: var(--main-bg-rgb);
+  min-height: 100vh;
+}

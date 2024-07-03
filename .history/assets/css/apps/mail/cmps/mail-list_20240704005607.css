@@ -1,0 +1,18 @@
+section.mail-list {
+  background-color: var(--main-bg-list);
+}
+
+.mail-list article {
+  border: 1px solid var(--clr-article-border);
+  border-collapse: collapse;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.mail-list article.bg-selected-mail {
+  background-color: var(--clr-article-selected);
+}
+
+.mail-list article.bg-read-mail {
+  background-color: var(--main-bg-rgb);
+}

@@ -1,0 +1,9 @@
+section.mail-preview {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.mail-preview .box {
+  width: 30px;
+  height: 20px;
+}

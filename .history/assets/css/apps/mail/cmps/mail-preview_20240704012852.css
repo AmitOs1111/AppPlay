@@ -1,0 +1,21 @@
+section.mail-preview {
+  /* background-color: aqua; */
+}
+
+section.mail-preview .box {
+  width: 30px;
+  height: 20px;
+}
+
+.mail-preview .box-mail-subject {
+  width: 170px;
+  margin-inline-end: 30px;
+}
+
+.mail-preview .box-created-time {
+  width: 70px;
+}
+
+.mail-preview .box-mail-body {
+  width: auto;
+}

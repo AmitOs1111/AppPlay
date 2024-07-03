@@ -1,0 +1,8 @@
+section.mail-preview {
+  /* background-color: aqua; */
+}
+
+section.mail-preview .box {
+  width: 30px;
+  height: 20px;
+}

@@ -1,0 +1,10 @@
+section.mail-preview {
+  display: flex;
+  justify-content: space-between;
+  background-color: aqua;
+}
+
+section.mail-preview .box {
+  width: 30px;
+  height: 20px;
+}

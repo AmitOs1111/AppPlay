@@ -1,0 +1,9 @@
+aside.mail-aside {
+  /* width: 250px; */
+  padding: 0px 10px;
+}
+
+.mail-aside .box-icon {
+  width: 20px;
+  height: 20px;
+}

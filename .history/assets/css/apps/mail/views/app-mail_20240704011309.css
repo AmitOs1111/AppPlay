@@ -1,0 +1,6 @@
+.app-mail {
+  background-color: var(--main-bg-rgb);
+  background-color: var(--main-bg-list);
+  min-height: 100vh;
+  /* width: 100vw; */
+}

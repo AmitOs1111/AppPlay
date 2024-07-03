@@ -1,0 +1,26 @@
+aside.mail-aside {
+  /* width: 250px; */
+  padding: 0px 10px;
+}
+
+.mail-aside .box-icon {
+  width: 20px;
+  height: 20px;
+  margin-inline-end: 20px;
+}
+
+.mail-aside .box-filter-aside {
+  width: 180px;
+  height: 30px;
+  margin-inline-end: 10px;
+}
+
+.mail-aside .box-compose {
+  background-color: var(--clr-compose);
+  height: 56px;
+  width: 150px;
+  margin-inline-end: 10px;
+  margin-block-end: 16px;
+  padding: 0px 10px;
+  border-radius: 1em;
+}

@@ -1,0 +1,8 @@
+section.mail-header {
+  background-color: aqua;
+}
+
+.mail-header .container-logo-hamburger {
+  width: 250px;
+  height: 50px;
+}

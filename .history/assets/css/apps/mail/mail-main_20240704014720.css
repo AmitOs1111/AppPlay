@@ -1,0 +1,14 @@
+/* Setup */
+
+@import './setup/variables.css';
+@import './setup/fonts.css';
+
+/* Views */
+
+@import './views/app-mail.css';
+
+/* Cmps */
+@import './cmps/mail-header.css';
+@import './cmps/mail-list.css';
+@import './cmps/mail-preview.css';
+@import './cmps/mail-aside.css';
