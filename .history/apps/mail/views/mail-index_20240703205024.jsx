@@ -18,6 +18,7 @@ export function MailIndex() {
   }, [])
 
   useEffect(() => {
+    console.log('rendering by filter')
     loadMails(filterBy)
   }, [filterBy])
 
@@ -38,6 +39,7 @@ export function MailIndex() {
   }
 
   function onSetFilterBy(filterByUpdate) {
+    console.log('filterBy:', filterByUpdate)
     setFilterBy((prevFilterBy) => ({
       ...prevFilterBy,
       ...filterByUpdate,

@@ -18,11 +18,11 @@ export function MailIndex() {
   }, [])
 
   useEffect(() => {
-    loadMails(filterBy)
+    console.log('rendering by filter')
   }, [filterBy])
 
-  function loadMails(filterBy) {
-    mailService.query(filterBy).then((mails) => setMails(mails))
+  function loadMails() {
+    mailService.query().then((mails) => setMails(mails))
   }
 
   function onSetChangeStatus(mail) {
@@ -38,6 +38,7 @@ export function MailIndex() {
   }
 
   function onSetFilterBy(filterByUpdate) {
+    console.log('filterBy:', filterByUpdate)
     setFilterBy((prevFilterBy) => ({
       ...prevFilterBy,
       ...filterByUpdate,

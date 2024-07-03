@@ -38,6 +38,7 @@ export function MailIndex() {
   }
 
   function onSetFilterBy(filterByUpdate) {
+    console.log('filterBy:', filterByUpdate)
     setFilterBy((prevFilterBy) => ({
       ...prevFilterBy,
       ...filterByUpdate,

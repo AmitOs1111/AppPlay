@@ -2,8 +2,7 @@ import { SelectMail } from '../cmps/select-mail.jsx'
 
 export function MailContentTopHeader({ mails, onSetSelectMail }) {
   function getMailCount() {
-    const count = mails.length
-    return `1-${count > 50 ? 50 : count}`
+    return `1-${mails.length > 50 ? 50 : mails.length}`
   }
 
   return (

@@ -21,6 +21,7 @@ function query(filterBy) {
     mails = _createMails()
     _saveToStorage(mails)
   }
+  console.log('filterBy from service:', filterBy)
   if (filterBy) {
     let { txt } = filterBy
 

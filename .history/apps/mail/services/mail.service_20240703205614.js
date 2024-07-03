@@ -29,6 +29,7 @@ function query(filterBy) {
     )
   }
 
+  console.log('mails after filter from service:', mails)
   return Promise.resolve(mails)
 }
 

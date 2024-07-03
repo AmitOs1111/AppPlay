@@ -17,12 +17,8 @@ export function MailIndex() {
     loadMails()
   }, [])
 
-  useEffect(() => {
-    loadMails(filterBy)
-  }, [filterBy])
-
-  function loadMails(filterBy) {
-    mailService.query(filterBy).then((mails) => setMails(mails))
+  function loadMails() {
+    mailService.query().then((mails) => setMails(mails))
   }
 
   function onSetChangeStatus(mail) {
@@ -37,17 +33,10 @@ export function MailIndex() {
     mailService.saveMails(updateMails).then(() => loadMails())
   }
 
-  function onSetFilterBy(filterByUpdate) {
-    setFilterBy((prevFilterBy) => ({
-      ...prevFilterBy,
-      ...filterByUpdate,
-    }))
-  }
-
   if (!mails) return <section>Loding...</section>
   return (
     <section className="app-mail">
-      <MailHeader filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
+      <MailHeader />
 
       <main className="mail-main flex">
         <MailAside />
