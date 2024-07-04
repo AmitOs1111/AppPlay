@@ -1,0 +1,44 @@
+section.compose {
+  background-color: aquamarine;
+  background-color: var(--main-bg-list);
+  width: 600px;
+  height: 550px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  box-shadow: 0px 0px 10px 0px;
+}
+
+.compose .compose-header {
+  background-color: var(--main-bg-rgb);
+  padding: 10px;
+}
+
+.compose form {
+  padding: 10px;
+}
+
+.compose form input {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid var(--clr-article-border);
+}
+
+.compose form textarea {
+  padding: 10px;
+  border: none;
+  height: 350px;
+}
+
+.compose button {
+  border: none;
+  background: none;
+}
+
+.compose button.send {
+  border: none;
+  background: #1755ce;
+  padding: 10px;
+  width: 100px;
+  border-radius: 1em;
+}

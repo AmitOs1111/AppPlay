@@ -1,7 +1,8 @@
 const { useState, useEffect } = React
 const { Link } = ReactRouterDOM
 
-export function MailAside({ openCompose }) {
+export function MailAside() {
+  const [compose, setCompose] = useState(null)
   const filterNames = [
     'inbox',
     'starred',
@@ -11,10 +12,14 @@ export function MailAside({ openCompose }) {
     'draft',
   ]
 
+  function openCompose() {
+    console.log('open compose')
+  }
+
   return (
     <aside className="mail-aside">
       <div
-        onChange={() => openCompose()}
+        onClick={() => openCompose()}
         className="box-compose flex align-center"
       >
         <img

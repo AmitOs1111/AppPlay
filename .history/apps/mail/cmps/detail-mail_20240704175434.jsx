@@ -32,13 +32,13 @@ export function DetailsMail({ onSetSelectedMailShow, selectedMail }) {
   return (
     <section className="details-mail">
       <button
-        onChange={() => {
+        onClick={() => {
           onSetSelectedMailShow(null)
         }}
       >
         Close
       </button>
-
+      <LoadingMail />
       <h2>{detailsMail.subject}</h2>
       <h4>{getFormatDetailsDate(detailsMail.sentAt)}</h4>
       <p>{detailsMail.body}</p>

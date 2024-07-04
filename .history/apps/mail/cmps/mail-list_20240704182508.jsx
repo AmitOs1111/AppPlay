@@ -24,7 +24,7 @@ export function MailList({
           />
 
           <div className="box-tools flex hide">
-            <button onChange={() => onRemoveMail(mail.id)}>x</button>
+            <button onClick={() => onRemoveMail(mail.id)}>x</button>
             <button>t</button>
           </div>
         </article>

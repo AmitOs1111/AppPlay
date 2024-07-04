@@ -5,7 +5,6 @@ const { useState, useEffect } = React
 import { mailService } from '../services/mail.service.js'
 import { utilService } from '../../../services/util.service.js'
 
-import { LoadingMail } from '../cmps/mail-loading.jsx'
 import { MailHeader } from '../cmps/mail-header.jsx'
 import { MailAside } from '../cmps/mail-aside.jsx'
 import { MailContentTopHeader } from '../cmps/mail-content-top-header.jsx'
@@ -17,7 +16,6 @@ export function MailIndex() {
   const [mails, setMails] = useState(null)
   const [filterBy, setFilterBy] = useState({ txt: '' })
   const [selectedMail, setSelectedMail] = useState(null)
-  const [compose, setCompose] = useState(true)
 
   useEffect(() => {
     console.log('Mounted email app')
@@ -52,19 +50,16 @@ export function MailIndex() {
   }
 
   function onSetSelectedMailShow(mail) {
+    console.log('mail', mail)
     setSelectedMail(mail)
   }
 
-  function openCompose() {
-    setCompose((prevCompose) => !prevCompose)
-  }
-
-  if (!mails) return <LoadingMail />
+  if (!mails) return <section>Loding...</section>
   return (
     <section className="app-mail">
       <MailHeader filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
       <main className="mail-main flex">
-        <MailAside openCompose={openCompose} />
+        <MailAside />
         {!selectedMail && (
           <div className="container-content">
             <MailContentTopHeader
@@ -86,7 +81,7 @@ export function MailIndex() {
           />
         )}
       </main>
-      {compose && <Compose />}
+      <Compose />
     </section>
   )
 }

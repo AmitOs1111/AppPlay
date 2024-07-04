@@ -17,7 +17,7 @@ export function MailIndex() {
   const [mails, setMails] = useState(null)
   const [filterBy, setFilterBy] = useState({ txt: '' })
   const [selectedMail, setSelectedMail] = useState(null)
-  const [compose, setCompose] = useState(true)
+  const [compose, setCompose] = useState(null)
 
   useEffect(() => {
     console.log('Mounted email app')
@@ -56,7 +56,7 @@ export function MailIndex() {
   }
 
   function openCompose() {
-    setCompose((prevCompose) => !prevCompose)
+    console.log('open compose')
   }
 
   if (!mails) return <LoadingMail />
@@ -86,7 +86,7 @@ export function MailIndex() {
           />
         )}
       </main>
-      {compose && <Compose />}
+      <Compose />
     </section>
   )
 }

@@ -1,0 +1,8 @@
+section.compose {
+  background-color: aquamarine;
+  width: 600px;
+  height: 550px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}

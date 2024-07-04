@@ -14,7 +14,7 @@ export function MailAside({ openCompose }) {
   return (
     <aside className="mail-aside">
       <div
-        onChange={() => openCompose()}
+        onClick={() => openCompose()}
         className="box-compose flex align-center"
       >
         <img

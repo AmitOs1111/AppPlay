@@ -32,7 +32,7 @@ export function DetailsMail({ onSetSelectedMailShow, selectedMail }) {
   return (
     <section className="details-mail">
       <button
-        onChange={() => {
+        onClick={() => {
           onSetSelectedMailShow(null)
         }}
       >

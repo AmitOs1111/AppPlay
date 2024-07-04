@@ -1,0 +1,12 @@
+.loading-mail {
+  background-color: aqua;
+  justify-content: center;
+}
+
+.circle {
+  background-color: var(--clr-compose);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px;
+}
