@@ -57,9 +57,9 @@ export function MailIndex() {
   return (
     <section className="app-mail">
       <MailHeader filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
-      <main className="mail-main flex">
-        <MailAside />
-        {!selectedMail && (
+      {!selectedMail && (
+        <main className="mail-main flex">
+          <MailAside />
           <div className="container-content">
             <MailContentTopHeader
               mails={mails}
@@ -72,14 +72,9 @@ export function MailIndex() {
               onSetSelectedMailShow={onSetSelectedMailShow}
             />
           </div>
-        )}
-        {selectedMail && (
-          <DetailsMail
-            onSetSelectedMailShow={onSetSelectedMailShow}
-            selectedMail={selectedMail}
-          />
-        )}
-      </main>
+        </main>
+      )}
+      {selectedMail && <DetailsMail />}
     </section>
   )
 }

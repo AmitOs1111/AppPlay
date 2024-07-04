@@ -1,0 +1,22 @@
+section.details-mail {
+  background-color: var(--main-bg-list);
+  height: 80vh;
+  padding: 40px 20px;
+}
+
+.details-mail button {
+  background-color: var(--clr-article-selected);
+  border: none;
+  height: 30px;
+  width: 80px;
+  border-radius: 1em;
+  margin-block-end: 20px;
+}
+
+.details-mail h2 {
+  margin-block-end: 20px;
+}
+
+.details-mail h4 {
+  margin-block-end: 20px;
+}

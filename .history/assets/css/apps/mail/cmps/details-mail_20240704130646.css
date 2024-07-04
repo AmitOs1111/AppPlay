@@ -1,0 +1,13 @@
+section.details-mail {
+  background-color: var(--main-bg-list);
+  height: 80vh;
+  padding: 40px 20px;
+}
+
+.details-mail button {
+  background-color: var(--clr-article-selected);
+  border: none;
+  height: 30px;
+  width: 60px;
+  border-radius: 1em;
+}

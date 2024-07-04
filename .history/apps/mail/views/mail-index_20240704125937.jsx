@@ -73,13 +73,13 @@ export function MailIndex() {
             />
           </div>
         )}
-        {selectedMail && (
-          <DetailsMail
-            onSetSelectedMailShow={onSetSelectedMailShow}
-            selectedMail={selectedMail}
-          />
-        )}
       </main>
+      {selectedMail && (
+        <DetailsMail
+          onSetSelectedMailShow={onSetSelectedMailShow}
+          selectedMail={selectedMail}
+        />
+      )}
     </section>
   )
 }

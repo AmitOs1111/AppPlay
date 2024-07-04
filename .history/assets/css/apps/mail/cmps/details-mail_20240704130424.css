@@ -1,0 +1,5 @@
+section.details-mail {
+  background-color: var(--main-bg-list);
+  height: 80vh;
+  padding: 40px 20px;
+}

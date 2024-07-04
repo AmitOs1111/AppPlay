@@ -33,6 +33,7 @@ function query(filterBy) {
 }
 
 function getById(mailId) {
+  console.log('from service getby id:', mailId)
   if (!mailId) return Promise.resolve(null)
   const mails = _loadFromStorage()
   const mail = mails.find((mail) => mailId === mail.id)

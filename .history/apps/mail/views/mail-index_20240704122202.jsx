@@ -9,7 +9,6 @@ import { MailHeader } from '../cmps/mail-header.jsx'
 import { MailAside } from '../cmps/mail-aside.jsx'
 import { MailContentTopHeader } from '../cmps/mail-content-top-header.jsx'
 import { MailList } from '../cmps/mail-list.jsx'
-import { DetailsMail } from '../cmps/detail-mail.jsx'
 
 export function MailIndex() {
   const [mails, setMails] = useState(null)
@@ -57,9 +56,9 @@ export function MailIndex() {
   return (
     <section className="app-mail">
       <MailHeader filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
-      <main className="mail-main flex">
-        <MailAside />
-        {!selectedMail && (
+      {!selectedMail && (
+        <main className="mail-main flex">
+          <MailAside />
           <div className="container-content">
             <MailContentTopHeader
               mails={mails}
@@ -72,14 +71,9 @@ export function MailIndex() {
               onSetSelectedMailShow={onSetSelectedMailShow}
             />
           </div>
-        )}
-        {selectedMail && (
-          <DetailsMail
-            onSetSelectedMailShow={onSetSelectedMailShow}
-            selectedMail={selectedMail}
-          />
-        )}
-      </main>
+        </main>
+      )}
+      {selectedMail && <div>Deatails</div>}
     </section>
   )
 }
