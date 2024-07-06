@@ -1,0 +1,70 @@
+.main-layout > *:not(.full) {
+  max-width: 100%;
+}
+
+/* ---Mobile---- */
+@media (max-width: 600px) {
+  /* HEADER */
+  .mail-header {
+    margin-block-end: 10px;
+  }
+
+  .mail-header .container-logo-hamburger {
+    width: 60px;
+    margin-inline-end: 20px;
+  }
+
+  .mail-hamburger {
+    margin: 0 10px;
+  }
+  .container-search-menu {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .mail-search {
+    width: 250px;
+  }
+
+  .box-menu {
+    margin-inline-end: 10px;
+  }
+
+  /* -----Aside----- */
+
+  aside.mail-aside {
+    background-color: aqua;
+  }
+
+  .mail-aside .box-compose {
+    width: 50px;
+    height: 50px;
+  }
+
+  .mail-aside .box-compose img {
+    margin: auto;
+  }
+
+  .box-compose h3 {
+    display: none;
+  }
+
+  .mail-aside .aside-filter .aside-filter-names {
+    background-color: beige;
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .mail-header {
+  }
+}
+
+@media (min-width: 900px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}

@@ -1,0 +1,39 @@
+.main-layout > *:not(.full) {
+  max-width: 100%;
+}
+
+/* ---Mobile---- */
+@media (max-width: 600px) {
+  /* HEADER */
+  .mail-header .container-logo-hamburger {
+    width: 60px;
+    margin-inline-end: 10px;
+  }
+
+  .mail-hamburger {
+    margin: 0 10px;
+  }
+
+  .mail-logo {
+    background-color: aquamarine;
+    margin-inline-end: 50px;
+  }
+
+  .mail-search {
+    width: 250px;
+  }
+}
+
+@media (min-width: 600px) {
+  .mail-header {
+  }
+}
+
+@media (min-width: 900px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}
