@@ -1,0 +1,13 @@
+section.mail-tools {
+  background-color: aqua;
+  position: absolute;
+  right: 10px;
+
+  width: 150px;
+  height: 40px;
+}
+
+.mail-tools img {
+  width: 30px;
+  height: 30px;
+}

@@ -1,0 +1,25 @@
+.mail-tools {
+  background-color: var(--main-bg-list);
+  position: absolute;
+  right: 10px;
+  width: 150px;
+  height: 40px;
+  opacity: 0;
+  /* display: none; */
+}
+
+.mail-tools img {
+  width: 25px;
+  height: 25px;
+}
+
+.mail-list article :hover + .mail-tools {
+  opacity: 1;
+  transition: opacity 0.3s;
+  /* display: block; */
+  /* transition: display 0.3s; */
+}
+
+section.mail-tools:hover {
+  opacity: 1;
+}

@@ -1,0 +1,21 @@
+.mail-tools {
+  background-color: aqua;
+  position: absolute;
+  right: 10px;
+  width: 150px;
+  height: 40px;
+  /* display: none; */
+}
+
+.mail-tools img {
+  width: 30px;
+  height: 30px;
+}
+
+.box-mail-subject :hover .mail-tools {
+  background-color: rgb(221, 0, 255);
+}
+.box-mail-body :hover .mail-tools {
+  background-color: rgb(221, 0, 255);
+  /* display: block; */
+}
