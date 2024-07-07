@@ -1,0 +1,27 @@
+section.mail-header {
+  background-color: aqua;
+  margin-block-end: 10px;
+}
+
+.mail-header .container-logo-hamburger {
+  width: 250px;
+  /* height: 50px; */
+}
+
+.mail-search {
+  background-color: var(--clr-src);
+  height: 50px;
+  border-radius: 1em;
+}
+
+.mail-search .mail-search-spotlight {
+  width: 50px;
+  padding-inline-start: 5px;
+}
+
+.mail-search .mail-input-search {
+  background-color: var(--clr-src);
+  border: none;
+  width: 50px;
+  width: 580px;
+}

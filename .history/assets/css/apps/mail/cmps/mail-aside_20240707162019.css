@@ -1,0 +1,46 @@
+.mail-aside {
+  /* width: 250px; */
+  padding: 0px 10px;
+}
+
+.box-icon {
+  width: 20px;
+  height: 20px;
+  margin-inline-end: 20px;
+  margin: auto;
+  margin-block-end: 10px;
+}
+
+.aside-filter-names {
+  width: 180px;
+  height: 30px;
+  margin-inline-end: 10px;
+  display: none;
+  margin-block-end: 10px;
+}
+
+.box-compose {
+  background-color: var(--clr-compose);
+  height: 50px;
+  width: 50px;
+  margin-inline-end: 10px;
+  cursor: pointer;
+  padding: 0px 10px;
+  border-radius: 1em;
+  margin: auto;
+  margin-block-end: 10px;
+}
+
+.box-compose img.box-icon {
+  margin: auto;
+}
+
+.box-compose h3 {
+  opacity: 0;
+}
+
+aside.mail-aside :hover + .aside-filter-names {
+  background-color: aquamarine;
+  opacity: 1;
+  /* width: 150px; */
+}
