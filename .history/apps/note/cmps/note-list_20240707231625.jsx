@@ -24,8 +24,8 @@ export function NoteList() {
         <article className="note-card flex column space-between" key={note.id}>
           <PreviewNote note={note} />
           <div className="note-box-tools flex">
-            <img src={`../../../assets/img/icon/trash-icon.png`} alt="" />
-            <img src="../../../assets/img/icon/inbox-icon.png" alt="" />
+            <img src="../../../assets/img/icon/trash" alt="" />
+            <img src="../../../assets/img/icon/inbox" alt="" />
           </div>
         </article>
       ))}

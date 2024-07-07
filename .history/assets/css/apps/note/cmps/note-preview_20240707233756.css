@@ -1,0 +1,9 @@
+.note-card {
+  background-color: #fff;
+  box-shadow: 0 0 8px 0px;
+  break-inside: avoid-column;
+}
+
+.preview-note {
+  padding: 20px;
+}

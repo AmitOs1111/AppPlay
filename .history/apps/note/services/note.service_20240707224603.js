@@ -17,13 +17,13 @@ function query(filterBy) {
     notes = _createNotes()
     _saveToStorage(notes)
   }
-  //   if (filterBy) {
-  //     let { txt } = filterBy
+  if (filterBy) {
+    let { txt } = filterBy
 
-  //     notes = notes.filter(
-  //       (mail) => mail.subject.includes(txt) || mail.body.includes(txt)
-  //     )
-  //   }
+    notes = notes.filter(
+      (mail) => mail.subject.includes(txt) || mail.body.includes(txt)
+    )
+  }
 
   return Promise.resolve(notes)
 }
@@ -92,7 +92,7 @@ function _createNote() {
     type: 'note-txt',
     isPinned: false,
     info: {
-      txt: utilService.makeLorem(8),
+      txt: utilService.makeLorem(12),
       createdAt: Date.now(),
     },
   }
@@ -100,14 +100,14 @@ function _createNote() {
 
 function _createNotes() {
   const notes = []
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 4; i++) {
     notes.push(_createNote())
   }
   return notes
 }
 
-function _saveToStorage(notes) {
-  storageService.saveToStorage(KEY, notes)
+function _saveToStorage(mails) {
+  storageService.saveToStorage(KEY, mails)
 }
 
 function _loadFromStorage() {

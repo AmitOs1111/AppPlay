@@ -1,0 +1,5 @@
+.note-list {
+  /* background-color: aquamarine; */
+  column-count: auto;
+  gap: 20px;
+}

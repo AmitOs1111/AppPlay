@@ -92,7 +92,7 @@ function _createNote() {
     type: 'note-txt',
     isPinned: false,
     info: {
-      txt: utilService.makeLorem(8),
+      txt: utilService.makeLorem(12),
       createdAt: Date.now(),
     },
   }
@@ -100,7 +100,7 @@ function _createNote() {
 
 function _createNotes() {
   const notes = []
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 4; i++) {
     notes.push(_createNote())
   }
   return notes

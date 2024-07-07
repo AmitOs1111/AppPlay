@@ -1,0 +1,16 @@
+.note-list {
+  /* background-color: aquamarine; */
+  column-count: 4;
+  gap: 20px;
+}
+
+@media (min-width: 1200px) {
+  .note-list {
+    column-count: 5;
+  }
+}
+@media (min-width: 1000px) {
+  .note-list {
+    column-count: 4;
+  }
+}

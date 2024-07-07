@@ -1,6 +1,5 @@
 const { useState, useEffect } = React
 
-import { PreviewNote } from '../cmps/preview-note.jsx'
 import { noteService } from '../services/note.service.js'
 
 export function NoteList() {
@@ -21,13 +20,7 @@ export function NoteList() {
   return (
     <section className="note-list">
       {notesList.map((note) => (
-        <article className="note-card flex column space-between" key={note.id}>
-          <PreviewNote note={note} />
-          <div className="note-box-tools flex">
-            <img src={`../../../assets/img/icon/trash-icon.png`} alt="" />
-            <img src="../../../assets/img/icon/inbox-icon.png" alt="" />
-          </div>
-        </article>
+        <article key={note.id}>{`${note.info.txt}`}</article>
       ))}
     </section>
   )

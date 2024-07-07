@@ -100,7 +100,7 @@ function _createNote() {
 
 function _createNotes() {
   const notes = []
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 4; i++) {
     notes.push(_createNote())
   }
   return notes

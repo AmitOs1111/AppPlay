@@ -4,26 +4,19 @@
   gap: 20px;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 1200px) {
   .note-list {
-    column-count: 2;
+    column-count: 5;
   }
 }
-
-@media (min-width: 640px) {
-  .note-list {
-    column-count: 3;
-  }
-}
-
 @media (min-width: 1000px) {
   .note-list {
     column-count: 4;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 600px) {
   .note-list {
-    column-count: 5;
+    column-count: 3;
   }
 }

@@ -1,17 +1,20 @@
-import { NoteList } from '../cmps/note-list.jsx'
-
 export function NoteIndex() {
   return (
-    <section className="note-index main-layout">
-      <header className="note-header full main-layout">
-        <div className="header-content  flex">
-          <div className="note-logo">Note</div>
-          <div className="main-search-container flex">
-            <div className="spotlight">🔎</div>
-            <input type="text" placeholder="Search" />
-          </div>
+    <section className="note-index ">
+      <header className="note-header flex">
+        <div className="note-logo">Note</div>
+        <div className="main-search-container flex">
+          <div className="spotlight">🔎</div>
+          <input type="text" placeholder="Search" />
         </div>
       </header>
+      <aside className="filter-by-note">
+        <ul>
+          <li>notes</li>
+          <li>remainder</li>
+          <li>insertion</li>
+        </ul>
+      </aside>
 
       <main>
         <div className="main-note-header ">
@@ -23,7 +26,6 @@ export function NoteIndex() {
               <button>todo</button>
             </div>
           </div>
-          <NoteList />
         </div>
       </main>
     </section>
