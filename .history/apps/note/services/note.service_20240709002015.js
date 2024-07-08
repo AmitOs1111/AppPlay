@@ -42,11 +42,11 @@ function getById(mailId) {
 //   return cars[nextCarIdx].id
 // }
 
-function remove(noteId) {
+function remove(mailId) {
   // return Promise.reject('Not now!!!')
-  let notes = _loadFromStorage()
-  notes = notes.filter((note) => note.id !== noteId)
-  _saveToStorage(notes)
+  let mails = _loadFromStorage()
+  mails = mails.filter((mail) => mail.id !== mailId)
+  _saveToStorage(mails)
   return Promise.resolve()
 }
 

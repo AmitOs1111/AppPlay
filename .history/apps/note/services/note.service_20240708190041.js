@@ -42,12 +42,17 @@ function getById(mailId) {
 //   return cars[nextCarIdx].id
 // }
 
-function remove(noteId) {
+function remove(mailId) {
   // return Promise.reject('Not now!!!')
-  let notes = _loadFromStorage()
-  notes = notes.filter((note) => note.id !== noteId)
-  _saveToStorage(notes)
+  let mails = _loadFromStorage()
+  mails = mails.filter((mail) => mail.id !== mailId)
+  _saveToStorage(mails)
   return Promise.resolve()
+}
+
+function save(mail) {
+  if (mail.id) return _update(mail)
+  //   else return _add(mail)
 }
 
 function saveMails(updateMails) {
@@ -59,18 +64,18 @@ function saveMails(updateMails) {
   return Promise.resolve(mails)
 }
 
-function save(note) {
-  if (note.id) return _update(note)
-  else return _add(note)
+function save(mail) {
+  if (mail.id) return _update(mail)
+  //   else return _add(mail)
 }
 
-function _add({ title, txt }) {
-  let notes = _loadFromStorage()
-  const note = _createNote(title, txt)
-  notes = [note, ...notes]
-  _saveToStorage(notes)
-  return Promise.resolve(note)
-}
+// function _add({ vendor, speed }) {
+//   let mails = _loadFromStorage()
+//   const car = _createMail(vendor, speed)
+//   mails = [car, ...mails]
+//   _saveToStorage(mails)
+//   return Promise.resolve(car)
+// }
 
 function _update(mailToUpdate) {
   let mails = _loadFromStorage()
@@ -81,16 +86,12 @@ function _update(mailToUpdate) {
   return Promise.resolve(mailToUpdate)
 }
 
-function _createNote(
-  title = utilService.makeLorem(5),
-  txt = utilService.makeLorem(8)
-) {
+function _createNote(txt = utilService.makeLorem(8)) {
   return {
     id: utilService.makeId(),
     type: 'note-txt',
     isPinned: false,
     info: {
-      title,
       txt,
       createdAt: Date.now(),
     },

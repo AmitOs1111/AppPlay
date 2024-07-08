@@ -42,12 +42,17 @@ function getById(mailId) {
 //   return cars[nextCarIdx].id
 // }
 
-function remove(noteId) {
+function remove(mailId) {
   // return Promise.reject('Not now!!!')
-  let notes = _loadFromStorage()
-  notes = notes.filter((note) => note.id !== noteId)
-  _saveToStorage(notes)
+  let mails = _loadFromStorage()
+  mails = mails.filter((mail) => mail.id !== mailId)
+  _saveToStorage(mails)
   return Promise.resolve()
+}
+
+function save(mail) {
+  if (mail.id) return _update(mail)
+  //   else return _add(mail)
 }
 
 function saveMails(updateMails) {
@@ -81,10 +86,7 @@ function _update(mailToUpdate) {
   return Promise.resolve(mailToUpdate)
 }
 
-function _createNote(
-  title = utilService.makeLorem(5),
-  txt = utilService.makeLorem(8)
-) {
+function _createNote(title, txt = utilService.makeLorem(8)) {
   return {
     id: utilService.makeId(),
     type: 'note-txt',
