@@ -6,15 +6,15 @@ export const noteService = {
   getById,
   remove,
   save,
-  getEmptyNote,
 }
 
 const KEY = 'appNoteDB'
 
 function query(filterBy) {
   let appNote = _loadFromStorage()
+  console.log('appNote:', appNote)
   if (!appNote) {
-    const notes = _createNotes()
+    notes = _createNotes()
     appNote = { notes, trashes: [] }
     _saveToStorage(appNote)
   }
@@ -45,11 +45,9 @@ function getById(mailId) {
 
 function remove(noteId) {
   // return Promise.reject('Not now!!!')
-  let appNote = _loadFromStorage()
-  let { notes } = appNote
-  let newNotes = notes.filter((note) => note.id !== noteId)
-  appNote.notes = newNotes
-  _saveToStorage(appNote)
+  let notes = _loadFromStorage()
+  notes = notes.filter((note) => note.id !== noteId)
+  _saveToStorage(notes)
   return Promise.resolve()
 }
 
@@ -58,24 +56,21 @@ function save(note) {
   else return _add(note)
 }
 
-function _add(noteToEdit) {
-  let { title, txt } = noteToEdit.info
-  let appNote = _loadFromStorage()
-  let { notes } = appNote
+function _add({ title, txt }) {
+  let notes = _loadFromStorage()
   const note = _createNote(title, txt)
-  let newNotes = [note, ...notes]
-  appNote.notes = newNotes
-  _saveToStorage(appNote)
+  notes = [note, ...notes]
+  _saveToStorage(notes)
   return Promise.resolve(note)
 }
 
-function _update(noteToUpdate) {
-  let appNote = _loadFromStorage()
-  appNote.notes = appNote.notes.map((note) =>
-    note.id === noteToUpdate.id ? noteToUpdate : note
+function _update(mailToUpdate) {
+  let mails = _loadFromStorage()
+  mails = mails.map((mail) =>
+    mail.id === mailToUpdate.id ? mailToUpdate : mail
   )
-  _saveToStorage(appNote)
-  return Promise.resolve(noteToUpdate)
+  _saveToStorage(mails)
+  return Promise.resolve(mailToUpdate)
 }
 
 function _createNote(
@@ -100,14 +95,6 @@ function _createNotes() {
     notes.push(_createNote())
   }
   return notes
-}
-
-function getEmptyNote() {
-  return {
-    type: 'note-txt',
-    isPinned: false,
-    info: { title: '', txt: '' },
-  }
 }
 
 function _saveToStorage(notes) {

@@ -58,8 +58,8 @@ function save(note) {
   else return _add(note)
 }
 
-function _add(noteToEdit) {
-  let { title, txt } = noteToEdit.info
+function _add(editNote) {
+  let { title, txt } = editNote.info
   let appNote = _loadFromStorage()
   let { notes } = appNote
   const note = _createNote(title, txt)
@@ -69,13 +69,13 @@ function _add(noteToEdit) {
   return Promise.resolve(note)
 }
 
-function _update(noteToUpdate) {
-  let appNote = _loadFromStorage()
-  appNote.notes = appNote.notes.map((note) =>
-    note.id === noteToUpdate.id ? noteToUpdate : note
+function _update(mailToUpdate) {
+  let mails = _loadFromStorage()
+  mails = mails.map((mail) =>
+    mail.id === mailToUpdate.id ? mailToUpdate : mail
   )
-  _saveToStorage(appNote)
-  return Promise.resolve(noteToUpdate)
+  _saveToStorage(mails)
+  return Promise.resolve(mailToUpdate)
 }
 
 function _createNote(

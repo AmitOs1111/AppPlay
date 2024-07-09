@@ -34,6 +34,11 @@ export function NoteIndex() {
     noteService.remove(noteId).then(() => loadNotes())
   }
 
+  function onEditNote(noteId) {
+    console.log('noteId:', noteId)
+    // noteService.remove(noteId).then(() => loadNotes())
+  }
+
   return (
     <section className="note-index main-layout">
       <NoteHeader />
@@ -44,7 +49,7 @@ export function NoteIndex() {
         <NoteList
           notesList={notesList}
           onRemoveNote={onRemoveNote}
-          setAddNote={setAddNote}
+          onEditNote={onEditNote}
         />
       </main>
     </section>

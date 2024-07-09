@@ -1,0 +1,8 @@
+.edit-note {
+  background-color: aquamarine;
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  top: 0;
+  right: 50%;
+}

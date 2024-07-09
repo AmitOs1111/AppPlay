@@ -34,13 +34,7 @@ export function NoteList({ notesList, onRemoveNote, setAddNote }) {
           </div>
         </article>
       ))}
-      {editNote && (
-        <EditNote
-          editNote={editNote}
-          setAddNote={setAddNote}
-          onToggleEditScreen={onToggleEditScreen}
-        />
-      )}
+      {editNote && <EditNote editNote={editNote} setAddNote={setAddNote} />}
     </section>
   )
 }

@@ -14,18 +14,14 @@ export function NoteTxt({ note, setAddNote }) {
   function handelChange({ target }) {
     const field = target.name
     const value = target.type === 'number' ? +target.value : target.value
-    console.log('editNote', editNote)
-    let { info } = editNote
-    info[field] = value
     setEditNote((prevEditNote) => ({
       ...prevEditNote,
-      info,
+      [field]: value,
     }))
   }
 
   function onAddNote(ev) {
     ev.preventDefault()
-    console.log('editNote', editNote)
     setAddNote(editNote)
   }
 
@@ -35,7 +31,7 @@ export function NoteTxt({ note, setAddNote }) {
       <form onSubmit={() => onAddNote(event)} className="flex column">
         <label htmlFor="note-txt-title"></label>
         <input
-          onChange={handelChange}
+          onChange={handelChange()}
           value={editNote.info.title}
           type="text"
           name="title"
@@ -45,7 +41,7 @@ export function NoteTxt({ note, setAddNote }) {
 
         <label htmlFor="note-txt"></label>
         <textarea
-          onChange={handelChange}
+          onChange={handelChange()}
           ref={inputRef}
           value={editNote.info.txt}
           name="txt"

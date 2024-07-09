@@ -8,10 +8,6 @@ import { EditNote } from '../cmps/edit-note.jsx'
 export function NoteList({ notesList, onRemoveNote, setAddNote }) {
   const [editNote, setEditNote] = useState(null)
 
-  function onToggleEditScreen(note) {
-    setEditNote(note)
-  }
-
   if (!notesList) return <div>Loading...</div>
   return (
     <section className="note-list">
@@ -27,20 +23,14 @@ export function NoteList({ notesList, onRemoveNote, setAddNote }) {
             />
             <img src="../../../assets/img/icon/inbox-icon.png" alt="" />
             <img
-              onClick={() => onToggleEditScreen(note)}
+              onClick={() => setEditNote(note)}
               src="../../../assets/img/icon/compose-icon.png"
               alt=""
             />
           </div>
         </article>
       ))}
-      {editNote && (
-        <EditNote
-          editNote={editNote}
-          setAddNote={setAddNote}
-          onToggleEditScreen={onToggleEditScreen}
-        />
-      )}
+      {editNote && <EditNote editNote={editNote} setAddNote={setAddNote} />}
     </section>
   )
 }

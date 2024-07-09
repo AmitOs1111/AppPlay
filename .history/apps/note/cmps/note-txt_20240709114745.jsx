@@ -15,17 +15,14 @@ export function NoteTxt({ note, setAddNote }) {
     const field = target.name
     const value = target.type === 'number' ? +target.value : target.value
     console.log('editNote', editNote)
-    let { info } = editNote
-    info[field] = value
-    setEditNote((prevEditNote) => ({
-      ...prevEditNote,
-      info,
+    setEditNote(({ info }) => ({
+      ...info,
+      [field]: value,
     }))
   }
 
   function onAddNote(ev) {
     ev.preventDefault()
-    console.log('editNote', editNote)
     setAddNote(editNote)
   }
 

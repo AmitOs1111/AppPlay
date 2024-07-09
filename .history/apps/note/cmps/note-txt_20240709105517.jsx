@@ -1,9 +1,7 @@
-import { noteService } from '../services/note.service.js'
-
 const { useState, useEffect, useRef } = React
 
 export function NoteTxt({ note, setAddNote }) {
-  const [editNote, setEditNote] = useState(note || noteService.getEmptyNote())
+  const [note, setNote] = useState(note || { title: '', txt: '' })
   const inputRef = useRef()
 
   useEffect(() => {
@@ -14,29 +12,24 @@ export function NoteTxt({ note, setAddNote }) {
   function handelChange({ target }) {
     const field = target.name
     const value = target.type === 'number' ? +target.value : target.value
-    console.log('editNote', editNote)
-    let { info } = editNote
-    info[field] = value
-    setEditNote((prevEditNote) => ({
-      ...prevEditNote,
-      info,
+    setNote((prevNote) => ({
+      ...prevNote,
+      [field]: value,
     }))
   }
 
   function onAddNote(ev) {
     ev.preventDefault()
-    console.log('editNote', editNote)
-    setAddNote(editNote)
+    setAddNote(note)
   }
 
-  if (!editNote) return <section>Loading...</section>
   return (
     <section className="note-text ">
       <form onSubmit={() => onAddNote(event)} className="flex column">
         <label htmlFor="note-txt-title"></label>
         <input
           onChange={handelChange}
-          value={editNote.info.title}
+          value={note.title}
           type="text"
           name="title"
           id="note-txt-title"
@@ -47,7 +40,7 @@ export function NoteTxt({ note, setAddNote }) {
         <textarea
           onChange={handelChange}
           ref={inputRef}
-          value={editNote.info.txt}
+          value={note.txt}
           name="txt"
           id="note-txt"
           cols="30"

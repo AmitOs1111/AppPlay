@@ -16,8 +16,8 @@ export function NoteIndex() {
   function loadNotes() {
     noteService
       .query()
-      .then((appNote) => {
-        let { notes } = appNote
+      .then((notes) => {
+        console.log('notes:', notes)
         setNotesList(notes)
       })
       .catch((err) => {
@@ -41,11 +41,7 @@ export function NoteIndex() {
       <main>
         <MakingNote setAddNote={setAddNote} />
 
-        <NoteList
-          notesList={notesList}
-          onRemoveNote={onRemoveNote}
-          setAddNote={setAddNote}
-        />
+        <NoteList notesList={notesList} onRemoveNote={onRemoveNote} />
       </main>
     </section>
   )

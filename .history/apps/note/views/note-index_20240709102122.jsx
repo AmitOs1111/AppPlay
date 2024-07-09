@@ -41,11 +41,7 @@ export function NoteIndex() {
       <main>
         <MakingNote setAddNote={setAddNote} />
 
-        <NoteList
-          notesList={notesList}
-          onRemoveNote={onRemoveNote}
-          setAddNote={setAddNote}
-        />
+        <NoteList notesList={notesList} onRemoveNote={onRemoveNote} />
       </main>
     </section>
   )

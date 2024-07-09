@@ -25,7 +25,6 @@ export function NoteTxt({ note, setAddNote }) {
 
   function onAddNote(ev) {
     ev.preventDefault()
-    console.log('editNote', editNote)
     setAddNote(editNote)
   }
 

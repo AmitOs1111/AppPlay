@@ -1,31 +1,25 @@
-import { noteService } from '../services/note.service.js'
-
 const { useState, useEffect, useRef } = React
 
 export function NoteTxt({ note, setAddNote }) {
-  const [editNote, setEditNote] = useState(note || noteService.getEmptyNote())
+  const [editNote, setEditNote] = useState(note || { title: '', txt: '' })
   const inputRef = useRef()
 
   useEffect(() => {
-    console.log('from note txt')
+    console.log('from note txt', editNote)
     inputRef.current.focus()
   }, [])
 
   function handelChange({ target }) {
     const field = target.name
     const value = target.type === 'number' ? +target.value : target.value
-    console.log('editNote', editNote)
-    let { info } = editNote
-    info[field] = value
     setEditNote((prevEditNote) => ({
       ...prevEditNote,
-      info,
+      [field]: value,
     }))
   }
 
   function onAddNote(ev) {
     ev.preventDefault()
-    console.log('editNote', editNote)
     setAddNote(editNote)
   }
 

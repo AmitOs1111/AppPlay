@@ -6,13 +6,13 @@ export const noteService = {
   getById,
   remove,
   save,
-  getEmptyNote,
 }
 
 const KEY = 'appNoteDB'
 
 function query(filterBy) {
   let appNote = _loadFromStorage()
+  console.log('appNote:', appNote)
   if (!appNote) {
     const notes = _createNotes()
     appNote = { notes, trashes: [] }
@@ -46,9 +46,10 @@ function getById(mailId) {
 function remove(noteId) {
   // return Promise.reject('Not now!!!')
   let appNote = _loadFromStorage()
+  console.log('appNote', appNote)
   let { notes } = appNote
-  let newNotes = notes.filter((note) => note.id !== noteId)
-  appNote.notes = newNotes
+  notes = notes.filter((note) => note.id !== noteId)
+  console.log('appNote', appNote)
   _saveToStorage(appNote)
   return Promise.resolve()
 }
@@ -58,8 +59,7 @@ function save(note) {
   else return _add(note)
 }
 
-function _add(noteToEdit) {
-  let { title, txt } = noteToEdit.info
+function _add({ title, txt }) {
   let appNote = _loadFromStorage()
   let { notes } = appNote
   const note = _createNote(title, txt)
@@ -69,13 +69,13 @@ function _add(noteToEdit) {
   return Promise.resolve(note)
 }
 
-function _update(noteToUpdate) {
-  let appNote = _loadFromStorage()
-  appNote.notes = appNote.notes.map((note) =>
-    note.id === noteToUpdate.id ? noteToUpdate : note
+function _update(mailToUpdate) {
+  let mails = _loadFromStorage()
+  mails = mails.map((mail) =>
+    mail.id === mailToUpdate.id ? mailToUpdate : mail
   )
-  _saveToStorage(appNote)
-  return Promise.resolve(noteToUpdate)
+  _saveToStorage(mails)
+  return Promise.resolve(mailToUpdate)
 }
 
 function _createNote(
@@ -100,14 +100,6 @@ function _createNotes() {
     notes.push(_createNote())
   }
   return notes
-}
-
-function getEmptyNote() {
-  return {
-    type: 'note-txt',
-    isPinned: false,
-    info: { title: '', txt: '' },
-  }
 }
 
 function _saveToStorage(notes) {

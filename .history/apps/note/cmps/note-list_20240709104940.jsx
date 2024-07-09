@@ -5,10 +5,10 @@ import { noteService } from '../services/note.service.js'
 import { PreviewNote } from '../cmps/preview-note.jsx'
 import { EditNote } from '../cmps/edit-note.jsx'
 
-export function NoteList({ notesList, onRemoveNote, setAddNote }) {
+export function NoteList({ notesList, onRemoveNote, setEditNotesetEditNote }) {
   const [editNote, setEditNote] = useState(null)
 
-  function onToggleEditScreen(note) {
+  function onEditNote(note) {
     setEditNote(note)
   }
 
@@ -27,20 +27,14 @@ export function NoteList({ notesList, onRemoveNote, setAddNote }) {
             />
             <img src="../../../assets/img/icon/inbox-icon.png" alt="" />
             <img
-              onClick={() => onToggleEditScreen(note)}
+              onClick={() => onEditNote(note)}
               src="../../../assets/img/icon/compose-icon.png"
               alt=""
             />
           </div>
         </article>
       ))}
-      {editNote && (
-        <EditNote
-          editNote={editNote}
-          setAddNote={setAddNote}
-          onToggleEditScreen={onToggleEditScreen}
-        />
-      )}
+      {editNote && <EditNote />}
     </section>
   )
 }
