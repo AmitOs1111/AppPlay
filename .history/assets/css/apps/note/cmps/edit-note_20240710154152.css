@@ -20,10 +20,3 @@ textarea {
   margin-block-end: 10px;
   background-color: rgb(205, 129, 129);
 }
-
-@media (max-width: 640px) {
-  .edit-note {
-    right: calc(50% - 150px);
-    width: 300px;
-  }
-}

@@ -1,0 +1,14 @@
+.note-header {
+  background-color: #fff;
+  padding: 10px;
+  border-top: 1px solid var(--clr-border1);
+  box-shadow: rgb(215, 212, 212) 0px 4px 3px 0px;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+}
+
+.main-search-container {
+  background-color: aqua;
+  width: 40%;
+}

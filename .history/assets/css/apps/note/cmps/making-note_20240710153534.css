@@ -1,5 +1,5 @@
 .making-note {
-  margin-block-start: 40px;
+  margin-block-start: 30px;
   margin-block-end: 40px;
 }
 
@@ -30,6 +30,7 @@
 
 .making-note-form input,
 textarea {
+  /* background-color: aqua; */
   padding: 10px;
   border-radius: 0.5em;
   border: none;
@@ -60,9 +61,6 @@ textarea {
   .btn-hamburger-type-note {
     display: block;
   }
-
-  .making-note-form {
-    width: 300px;
 }
 
 @media (min-width: 640px) {

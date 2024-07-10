@@ -30,6 +30,7 @@ export function NoteIndex() {
   }
 
   function onRemoveNote(noteId) {
+    console.log('noteId:', noteId)
     noteService.remove(noteId).then(() => loadNotes())
   }
 

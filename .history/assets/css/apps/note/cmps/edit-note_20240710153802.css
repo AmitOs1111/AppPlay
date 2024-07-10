@@ -1,0 +1,10 @@
+.edit-note {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: calc(50% - 300px);
+  box-shadow: 0px 0px 6px 0px;
+  width: 600px;
+  box-shadow: 0px 0px 3px 0px;
+  border-radius: 0.5em;
+}

@@ -1,0 +1,8 @@
+.note-header {
+  background-color: #fff;
+  padding: 10px;
+  border-top: 1px solid var(--clr-border1);
+  border-bottom: 1px solid var(--clr-border1);
+  position: fixed;
+  z-index: 20;
+}
