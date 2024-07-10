@@ -1,0 +1,26 @@
+.making-note {
+  height: 200px;
+}
+
+.box-show-making-note {
+  padding: 10px;
+  box-shadow: 0px 0px 6px 0px;
+  border-radius: 0.5em;
+}
+
+@media (max-width: 640px) {
+  .making-note {
+    height: 100px;
+  }
+
+  .box-show-making-note {
+    width: 300px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 640px) {
+  .box-show-making-note {
+    width: 600px;
+  }
+}
