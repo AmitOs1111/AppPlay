@@ -1,0 +1,34 @@
+header {
+  background: lightcyan;
+  border-bottom: 2px solid white;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+nav a {
+  margin: 0.5em;
+}
+
+nav a:active {
+  color: purple;
+}
+
+nav a.active {
+  color: darkblue;
+  font-weight: bold;
+  text-decoration: overline;
+}
+
+.app-logo {
+  background: rgb(238, 236, 240);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 236, 240, 1) 0%,
+    rgba(253, 62, 29, 1) 44%,
+    rgba(26, 5, 222, 1) 100%
+  );
+}

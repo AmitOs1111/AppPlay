@@ -32,7 +32,7 @@ nav a.active {
 
 .nav-main-menu {
   position: absolute;
-  bottom: 10;
+  bottom: -10;
   right: 0;
   width: 200px;
   height: 200px;
@@ -43,7 +43,6 @@ nav a.active {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  z-index: 30;
 }
 
 .nav-main-menu .btn-menu {
@@ -51,12 +50,9 @@ nav a.active {
   height: 60px;
   border: 1px solid var(--clr-border1);
   border-radius: 0.4em;
+  background-color: aqua;
   display: flex;
+
   align-items: center;
   justify-content: center;
-}
-
-.btn-main-menu {
-  font-size: 30px;
-  margin-inline-end: 20px;
 }

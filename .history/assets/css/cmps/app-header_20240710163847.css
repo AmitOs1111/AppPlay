@@ -1,0 +1,31 @@
+header {
+  background: rgb(255, 248, 224);
+  border-bottom: 2px solid rgb(236, 234, 234);
+  position: relative;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+nav a {
+  margin: 0.5em;
+}
+
+nav a:active {
+  color: purple;
+}
+
+nav a.active {
+  color: darkblue;
+  font-weight: bold;
+  text-decoration: overline;
+}
+
+.app-logo {
+  font-size: 30px;
+  margin-inline-start: 20px;
+  color: rgb(49, 52, 52);
+}
