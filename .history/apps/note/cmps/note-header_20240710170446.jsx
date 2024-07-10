@@ -1,6 +1,6 @@
 const { Link, NavLink, withRouter } = ReactRouterDOM
 
-import { MainMenu } from '../../../cmps/main-menu.jsx'
+import { MainMenu } from '../cmps/main-menu.jsx'
 
 export function NoteHeader() {
   return (

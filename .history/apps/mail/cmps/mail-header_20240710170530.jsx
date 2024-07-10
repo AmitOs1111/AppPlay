@@ -1,6 +1,6 @@
 import { FilterBySearch } from '../cmps/filter-by-search.jsx'
 
-import { MainMenu } from '../../../cmps/main-menu.jsx'
+import { MainMenu } from '../cmps/main-menu.jsx'
 
 export function MailHeader({ filterBy, onSetFilterBy }) {
   return (

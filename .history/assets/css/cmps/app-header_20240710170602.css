@@ -25,7 +25,7 @@ nav a.active {
 }
 
 .app-logo {
-  font-size: 25px;
+  font-size: 30px;
   margin-inline-start: 20px;
   color: rgb(49, 52, 52);
 }
@@ -57,6 +57,6 @@ nav a.active {
 }
 
 .btn-main-menu {
-  font-size: 20px;
+  font-size: 30px;
   margin-inline-end: 10px;
 }
