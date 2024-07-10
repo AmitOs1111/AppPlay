@@ -1,0 +1,13 @@
+.note-box-tools {
+  padding: 5px;
+}
+
+.note-box-tools img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.note-card:hover {
+  background-color: blue;
+}

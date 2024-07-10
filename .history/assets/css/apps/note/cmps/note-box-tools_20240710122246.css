@@ -1,0 +1,22 @@
+.note-box-tools {
+  padding: 5px;
+  height: 30px;
+  margin-block-end: 10px;
+}
+
+.box-tools {
+  display: none;
+}
+
+.note-box-tools img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.note-card:hover .box-tools {
+  display: block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

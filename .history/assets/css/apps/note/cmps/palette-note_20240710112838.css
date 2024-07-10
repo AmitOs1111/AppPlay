@@ -1,0 +1,18 @@
+.palette-note {
+  background-color: #fff;
+  position: absolute;
+  bottom: -10;
+  right: calc(50% - 175px);
+  padding: 10px;
+  z-index: 10;
+  border: 1px solid var(--clr-border1);
+  border-radius: 0.8px;
+}
+
+.btn-palette {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: none;
+  margin: 2px;
+}

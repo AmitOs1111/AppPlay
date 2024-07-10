@@ -1,0 +1,27 @@
+article.container-note {
+  position: relative;
+  max-width: 300px;
+  break-inside: avoid-column;
+  margin-block-end: 20px;
+}
+
+.note-card {
+  /* background-color: var(--clr-border1); */
+  /* box-shadow: 0 0 8px 0px; */
+  border: 1px solid var(--clr-border1);
+  border-radius: 1em;
+  padding: 20px;
+}
+
+.note-card :hover {
+  /* background-color: aqua; */
+  box-shadow: 0 0 8px 0px;
+}
+
+/* article.container-note :hover {
+  background-color: red;
+} */
+
+.preview-note {
+  padding: 20px;
+}

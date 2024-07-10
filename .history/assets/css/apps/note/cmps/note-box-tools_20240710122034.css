@@ -1,0 +1,20 @@
+.note-box-tools {
+  padding: 5px;
+}
+
+.box-tools {
+  display: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.note-box-tools img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.note-card:hover .box-tools {
+  display: block;
+  background-color: aqua;
+}

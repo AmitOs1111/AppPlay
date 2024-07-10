@@ -1,0 +1,11 @@
+.note-card {
+  max-width: 100px;
+  box-shadow: 0 0 8px 0px;
+  break-inside: avoid-column;
+  margin-block-end: 20px;
+  background-color: aqua;
+}
+
+.preview-note {
+  padding: 20px;
+}

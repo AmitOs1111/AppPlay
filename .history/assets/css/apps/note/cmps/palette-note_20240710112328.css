@@ -1,0 +1,15 @@
+.palette-note {
+  background-color: aqua;
+  position: absolute;
+  bottom: -10;
+  padding: 5px;
+  z-index: 10;
+}
+
+.btn-palette {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: none;
+  margin: 3px;
+}

@@ -1,0 +1,19 @@
+article.container-note {
+  position: relative;
+  max-width: 300px;
+  break-inside: avoid-column;
+  margin-block-end: 20px;
+}
+
+.note-card {
+  background-color: aqua;
+}
+
+article.container-note :hover {
+  background-color: red;
+  box-shadow: 0 0 8px 0px;
+}
+
+.preview-note {
+  padding: 20px;
+}
