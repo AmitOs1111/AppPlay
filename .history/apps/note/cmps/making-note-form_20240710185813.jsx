@@ -3,7 +3,6 @@ const { useState, useEffect } = React
 import { NoteTxt } from '../cmps/note-txt.jsx'
 import { TodoList } from '../cmps/note-todo.jsx'
 import { ImgNote } from '../cmps/note-img.jsx'
-import { VideoNote } from '../cmps/video-note.jsx'
 
 export function MakingNoteForm({ setAddNote, noteType }) {
   useEffect(() => {
@@ -37,6 +36,10 @@ function DynamicCmp(props) {
     case 'MapNote':
       return <MapNote setAddNote={props.setAddNote} />
   }
+}
+
+function VideoNote() {
+  return <section>VideoNote</section>
 }
 
 function DrawNote() {

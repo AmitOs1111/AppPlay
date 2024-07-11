@@ -7,13 +7,10 @@ export function PreviewNote({ note }) {
     setIsDone((prevIsDone) => !prevIsDone)
   }
 
-  if (!note) return <section>Loading...</section>
-  // console.log('note:', note)
-  // console.log('note.info:', note.info)
-  let { title, txt, todos, src, videoId } = note.info
+  let { title, txt, todos, src } = note.info
   return (
     <section className="preview-note">
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       {txt && <p>{txt}</p>}
       {todos &&
         todos.map((todo, idx) => (
@@ -28,16 +25,6 @@ export function PreviewNote({ note }) {
             </button>
           </article>
         ))}
-      {src && <img src={src} alt="" />}
-      {videoId && (
-        <React.Fragment>
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/${video.videoId}"
-          ></iframe>
-        </React.Fragment>
-      )}
     </section>
   )
 }

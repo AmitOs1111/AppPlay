@@ -13,7 +13,7 @@ export function PreviewNote({ note }) {
   let { title, txt, todos, src, videoId } = note.info
   return (
     <section className="preview-note">
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       {txt && <p>{txt}</p>}
       {todos &&
         todos.map((todo, idx) => (

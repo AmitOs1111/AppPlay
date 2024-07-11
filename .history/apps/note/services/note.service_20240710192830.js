@@ -25,8 +25,7 @@ function query(filterBy) {
   //       (mail) => mail.subject.includes(txt) || mail.body.includes(txt)
   //     )
   //   }
-  // appNote.notes.splice(0, 1)
-  // _saveToStorage(appNote)
+
   return Promise.resolve(appNote)
 }
 
@@ -61,10 +60,10 @@ function save(note) {
 
 function _add(noteToEdit) {
   let { type } = noteToEdit
-  let { title, txt, todos, src, videoId } = noteToEdit.info
+  let { title, txt, todos } = noteToEdit.info
   let appNote = _loadFromStorage()
   let { notes } = appNote
-  const note = _createNote(title, txt, todos, type, src, videoId)
+  const note = _createNote(title, txt, todos, type)
   let newNotes = [note, ...notes]
   appNote.notes = newNotes
   _saveToStorage(appNote)
@@ -84,16 +83,14 @@ function _createNote(
   title = utilService.makeLorem(5),
   txt = utilService.makeLorem(8),
   todos,
-  type,
-  src,
-  videoId
+  type
 ) {
   return {
     id: utilService.makeId(),
     type,
     isPinned: false,
     style: { backgroundColor: '#fff' },
-    info: _getInfoNote(type, title, txt, todos, src, videoId),
+    info: _getInfoNote(type, title, txt, todos),
   }
 }
 
@@ -112,8 +109,8 @@ function getEmptyNote(type) {
       return {
         type: 'note-txt',
         isPinned: false,
-        style: { backgroundColor: '#00d' },
         info: { title: '', txt: '' },
+        style: { backgroundColor: '#00d' },
       }
       break
     case 'note-todo':
@@ -131,30 +128,17 @@ function getEmptyNote(type) {
         style: { backgroundColor: '#00d' },
         info: { title: '', src: '' },
       }
-    case 'note-video':
-      return {
-        type: 'note-video',
-        isPinned: false,
-        style: { backgroundColor: '#00d' },
-        info: { title: '', videoId: '', description: '' },
-      }
       break
   }
 }
 
-function _getInfoNote(type, title, txt, todos, src, videoId) {
+function _getInfoNote(type, title, txt, todos) {
   switch (type) {
     case 'note-txt':
       return { title, txt, createdAt: Date.now() }
       break
     case 'note-todo':
       return { title, todos, createdAt: Date.now() }
-      break
-    case 'note-img':
-      return { src, createdAt: Date.now() }
-      break
-    case 'note-video':
-      return { title, videoId, createdAt: Date.now() }
       break
   }
 }

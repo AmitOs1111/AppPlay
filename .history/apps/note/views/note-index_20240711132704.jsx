@@ -26,7 +26,6 @@ export function NoteIndex() {
   }
 
   function setAddNote(note) {
-    console.log('note:', note)
     noteService.save(note).then(() => loadNotes())
   }
 

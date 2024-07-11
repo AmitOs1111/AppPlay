@@ -25,8 +25,8 @@ function query(filterBy) {
   //       (mail) => mail.subject.includes(txt) || mail.body.includes(txt)
   //     )
   //   }
-  // appNote.notes.splice(0, 1)
-  // _saveToStorage(appNote)
+  appNote.notes.splice(0, 1)
+  _saveToStorage(appNote)
   return Promise.resolve(appNote)
 }
 

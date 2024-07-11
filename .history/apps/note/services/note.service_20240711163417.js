@@ -26,7 +26,6 @@ function query(filterBy) {
   //     )
   //   }
   // appNote.notes.splice(0, 1)
-  // _saveToStorage(appNote)
   return Promise.resolve(appNote)
 }
 
@@ -61,10 +60,10 @@ function save(note) {
 
 function _add(noteToEdit) {
   let { type } = noteToEdit
-  let { title, txt, todos, src, videoId } = noteToEdit.info
+  let { title, txt, todos, src } = noteToEdit.info
   let appNote = _loadFromStorage()
   let { notes } = appNote
-  const note = _createNote(title, txt, todos, type, src, videoId)
+  const note = _createNote(title, txt, todos, type, src)
   let newNotes = [note, ...notes]
   appNote.notes = newNotes
   _saveToStorage(appNote)
@@ -85,15 +84,14 @@ function _createNote(
   txt = utilService.makeLorem(8),
   todos,
   type,
-  src,
-  videoId
+  src
 ) {
   return {
     id: utilService.makeId(),
     type,
     isPinned: false,
     style: { backgroundColor: '#fff' },
-    info: _getInfoNote(type, title, txt, todos, src, videoId),
+    info: _getInfoNote(type, title, txt, todos, src),
   }
 }
 
@@ -142,7 +140,7 @@ function getEmptyNote(type) {
   }
 }
 
-function _getInfoNote(type, title, txt, todos, src, videoId) {
+function _getInfoNote(type, title, txt, todos, src) {
   switch (type) {
     case 'note-txt':
       return { title, txt, createdAt: Date.now() }
@@ -152,9 +150,6 @@ function _getInfoNote(type, title, txt, todos, src, videoId) {
       break
     case 'note-img':
       return { src, createdAt: Date.now() }
-      break
-    case 'note-video':
-      return { title, videoId, createdAt: Date.now() }
       break
   }
 }
