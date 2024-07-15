@@ -5,7 +5,6 @@ eventBusService
 
 export function UserMsg() {
   const [msg, setMsg] = useState(null)
-  // const [msg, setMsg] = useState({ txt: 'some message', type: '' })
 
   useEffect(() => {
     eventBusService.on('show-user-msg', (msg) => {

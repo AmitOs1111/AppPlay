@@ -20,7 +20,7 @@ export function UserMsg() {
 
   if (!msg) return ''
   return (
-    <div className={'user-msg ' + msg.type}>
+    <div className={'user-msg flex space-between' + msg.type}>
       <p>{msg.txt}</p>
       <button onClick={() => onCloseMsg()}>x</button>
     </div>

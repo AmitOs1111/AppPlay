@@ -37,23 +37,23 @@ export function showErrorMsg(txt) {
 }
 
 // Service Testing:
-// eventBusService.on('', (data) => {
-//   console.log('Got Muk with data:', data)
-// })
-// eventBusService.on('muk', console.log)
-// eventBusService.on('puk', (level) => {
-//   console.log('Got puk with level:', level)
-// })
-// const unsubscribe = eventBusService.on('puk', (data) => {
-//   console.log('Mee too:', data)
-// })
+eventBusService.on('', (data) => {
+  console.log('Got Muk with data:', data)
+})
+eventBusService.on('muk', console.log)
+eventBusService.on('puk', (level) => {
+  console.log('Got puk with level:', level)
+})
+const unsubscribe = eventBusService.on('puk', (data) => {
+  console.log('Mee too:', data)
+})
 
 // setTimeout(()=>{
 //     unsubscribe()
 // }, 2000)
 
-// eventBusService.emit('muk', 'muk:' + 100)
-// eventBusService.emit('puk', 10)
+eventBusService.emit('muk', 'muk:' + 100)
+eventBusService.emit('puk', 10)
 
 // setTimeout(()=>{
 //     eventBusService.emit('muk', 'Buuuu!')

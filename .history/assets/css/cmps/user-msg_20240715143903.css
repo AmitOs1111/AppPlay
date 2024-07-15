@@ -1,6 +1,7 @@
 .user-msg {
   background-color: rgb(233, 229, 229);
   padding: 1em;
+  /* position: absolute; */
   position: fixed;
   bottom: 0;
   right: 2em;

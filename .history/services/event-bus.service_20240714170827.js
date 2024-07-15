@@ -1,7 +1,13 @@
+export const eventBusService = {
+  showUserMsg,
+  showSuccessMsg,
+  showErrorMsg,
+}
+
 function createEventEmitter() {
   const listenersMap = {}
   // Trick for DEBUG
-  //   window.mapmap = listenersMap
+  window.mapmap = listenersMap
   return {
     on(evName, listener) {
       listenersMap[evName] = listenersMap[evName]
@@ -22,8 +28,6 @@ function createEventEmitter() {
 
 export const eventBusService = createEventEmitter()
 
-// -----------------------------------------------//
-
 export function showUserMsg(msg) {
   eventBusService.emit('show-user-msg', msg)
 }
@@ -31,31 +35,29 @@ export function showUserMsg(msg) {
 export function showSuccessMsg(txt) {
   showUserMsg({ txt, type: 'success' })
 }
-
 export function showErrorMsg(txt) {
   showUserMsg({ txt, type: 'error' })
 }
 
 // Service Testing:
-// eventBusService.on('', (data) => {
-//   console.log('Got Muk with data:', data)
+// eventBus.on('muk', (data)=>{
+//     console.log('Got Muk with data:', data)
 // })
-// eventBusService.on('muk', console.log)
-// eventBusService.on('puk', (level) => {
-//   console.log('Got puk with level:', level)
+// eventBus.on('muk', console.log)
+// eventBus.on('puk', (level)=>{
+//     console.log('Got puk with level:', level)
 // })
-// const unsubscribe = eventBusService.on('puk', (data) => {
-//   console.log('Mee too:', data)
+// const unsubscribe = eventBus.on('puk', data=>{
+//     console.log('Mee too:', data)
 // })
 
 // setTimeout(()=>{
 //     unsubscribe()
 // }, 2000)
 
-// eventBusService.emit('muk', 'muk:' + 100)
-// eventBusService.emit('puk', 10)
+// eventBus.emit('puk', 100)
 
 // setTimeout(()=>{
-//     eventBusService.emit('muk', 'Buuuu!')
-//     eventBusService.emit('puk', 3)
+//     eventBus.emit('muk', 'Buuuu!')
+//     eventBus.emit('puk', 3)
 // }, 3000)

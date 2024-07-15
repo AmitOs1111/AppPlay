@@ -29,6 +29,7 @@ export function showUserMsg(msg) {
 }
 
 export function showSuccessMsg(txt) {
+  console.log('showSuccessMsg', txt)
   showUserMsg({ txt, type: 'success' })
 }
 

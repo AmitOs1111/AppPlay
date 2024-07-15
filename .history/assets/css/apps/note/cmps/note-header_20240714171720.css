@@ -9,7 +9,7 @@
 }
 
 .main-search-container {
-  background-color: var(--clr-border1);
+  /* background-color: aqua; */
   width: 400px;
   border: 1px solid var(--clr-border1);
   border-radius: 0.8em;
@@ -19,15 +19,11 @@
 }
 
 .main-search-container input {
-  /* background-color: aqua; */
-  width: 90%;
+  background-color: aqua;
+  width: 100%;
   padding: 10px;
   background: none;
   border: none;
-}
-
-.main-search-container input:focus {
-  outline-width: 0;
 }
 
 @media (max-width: 640px) {

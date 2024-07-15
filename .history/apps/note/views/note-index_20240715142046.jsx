@@ -3,12 +3,16 @@ import { noteService } from '../services/note.service.js'
 import { NoteList } from '../cmps/note-list.jsx'
 import { NoteHeader } from '../cmps/note-header.jsx'
 import { MakingNote } from '../cmps/making-note.jsx'
-import { showSuccessMsg } from '../../../services/event-bus.service.js'
+import {
+  showSuccessMsg,
+  showErrorMsg,
+} from '../../../services/event-bus.service.js'
 
 export function NoteIndex() {
   const [notesList, setNotesList] = useState([])
 
   useEffect(() => {
+    console.log('Note index')
     loadNotes()
   }, [])
 
@@ -25,11 +29,8 @@ export function NoteIndex() {
   }
 
   function setAddNote(note) {
-    // console.log('note:', note)
-    noteService.save(note).then(() => {
-      loadNotes()
-      showSuccessMsg('note add!')
-    })
+    console.log('note:', note)
+    noteService.save(note).then(() => loadNotes())
   }
 
   function onRemoveNote(noteId) {
